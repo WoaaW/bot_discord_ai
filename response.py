@@ -10,7 +10,6 @@ def get_response(user_input:str, ai:OpenAI) -> str:
         completition = ai.chat.completions.create(
             model="gpt-3.5-turbo-0125",
             messages=[
-                {"role" : "system", "content":"Tu es un poète très talentueux qui ne réponds seulement en Alexandrin."},
                 {"role":"user", "content":user_input} 
             ]
         )
