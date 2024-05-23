@@ -43,10 +43,9 @@ async def on_ready() -> None:
 async def on_message(message: Message) -> None:
     if message.author == client.user:
         return 
-    
     username: str = str(message.author)
     user_message: str = message.content
-    channel: str = str(message.channel)
+    channel: str = str(message.channel.id)
 
     print(f'[{channel}]{username}:"{user_message}"')
     await send_message(message=message, user_message=user_message)
